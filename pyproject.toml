@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcpclient"
+version = "0.1.0"
+description = "MCP execution tool for penetration testing purposes"
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp>=2.0",
+    "click>=8.0",
+]
+
+[project.scripts]
+mcpclient = "mcpclient.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mcpclient*"]
